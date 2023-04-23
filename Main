@@ -1,0 +1,29 @@
+#Imports for Project 
+#Copied from Lab 06
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+
+import matplotlib
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+import torch 
+
+# Set PyTorch to use CPU ONLY 
+# device = torch.device("cpu")
+# torch.cuda.is_available = lambda : False
+
+# Select which device PyTorch should use. If you have a gpu but
+# want to use a the cpu only comment out this line and use the above
+# lines instead.
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+import fastai
+assert fastai.__version__ >= '2.2.7'
+# Set FastAI to use CPU ONLY as well
+# If use_cuda == None then GPU is used
+# If use_cuda == True Error is thrown
+# If use_cude == False CPU is used
+# torch_core.defaults.use_cuda = False
